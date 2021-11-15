@@ -1,0 +1,97 @@
+<script>
+//    let userJson = '{"name":"Petr","age":25,"isAdmin":true}';
+//    let user = JSON.parse(userJson);
+////    console.log(user);
+//    user.dateCreated = '2021-10-28';
+//    user.address = {
+//        city: 'Москва',
+//        postalCode: '410008'
+//    }
+//    
+////    Преобразование объекта JS в строку JSON
+//    
+//    let user2 = JSON.stringify(user,null,4);
+////    console.log(user2);
+//    
+//    let user3 = JSON.parse(user2,(key,value)=>{
+//        if(key == 'dateCreated'){
+//            value = new Date(value);
+//        }
+//        return value;
+//    });
+//    
+//    console.log(user3);
+    
+//    Синхронность и асинхронность
+    
+//    const async = a => {
+//        setTimeout(()=>{
+//            const b = a + 1;
+//            return b;
+//        },4000);
+//        return 5000;
+//    }
+//    
+//    console.log(async(5));
+    
+//    Callback функция - это функция, которую запускает другая функция в определенный момент времени
+    
+//      const async = (a,cb) => {
+//        setTimeout(()=>{
+//            const b = a + 1;
+//            cb(b);
+//        },4000);
+//        return 5000;
+//    }
+//      
+//     console.log(async(5,x => {
+//         console.log(x);
+//     }))
+      
+      
+//      Промис - это объект, в котором есть свойства resolve и reject и эти свойства назначаются с учетом 
+//      исполнения асинхронности
+    
+    let num = a => {
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                if(a){
+                    resolve(a + 10);//после resolve всегда вызывается обработчик then
+                }else{
+                    reject("Error");//после reject всегда вызывается обработчик catch
+                }
+            },3000);
+            return 5000;
+        })
+    }
+    
+    num(5)
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>
